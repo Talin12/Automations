@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 import csv
 from django.apps import apps
+from dataentry.utils import generate_csv_path
 import datetime
 
 # Proposed Command = python manage.py exportdata model_name
@@ -33,8 +34,7 @@ class Command(BaseCommand):
         data = model.objects.all()
 
         # Define the CSV file path
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        file_path = f'exported_{model_name}_data_{timestamp}.csv'
+        file_path = generate_csv_path(model_name)
 
         # Open the CSV file for writing
         with open(file_path, mode='w', newline='', encoding='utf-8') as file:
