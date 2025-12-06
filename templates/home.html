@@ -1,86 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automating Boring Stuff</title>
-    <style>
-        body {
-            /* Dark Theme Background */
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Very dark gray */
-            color: #e0e0e0; /* Light text color */
-            margin: 0;
-            padding: 20px;
-            /* Centering the content */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Ensure it takes full viewport height */
-        }
+{% extends 'base.html' %}
 
-        .container {
-            /* Dark Card Style */
-            background-color: #1e1e1e; /* Slightly lighter dark gray for card */
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow for depth */
-            width: 100%;
-            max-width: 450px; /* Slightly wider container */
-            text-align: center;
-            border: 1px solid #333; /* Subtle border */
-        }
+{% block content %}
+    <div class="container" style="padding: 50px;">
+        <h2 class="text-center">Automate The Boring Stuff With Django</h2>
+        <div class="row pt-5">
+            <!-- Import data -->
+            <div class="col-md-4">
+                <a href="{% url 'import_data' %}" class="text-decoration-none text-dark">
+                    <div class="card alert-primary shadow">
+                        <div class="card-header">
+                        <h4>Import Data</h4>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">Imports data from CSV file to any table.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Export Data -->
+            <div class="col-md-4">
+                <a href="{% url 'export_data' %}" class="text-decoration-none text-dark">
+                    <div class="card alert-success shadow">
+                        <div class="card-header">
+                        <h4>Export Data</h4>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">Exports data from a specific table to a CSV file.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        h2 {
-            /* Accent color for header */
-            color: #90caf9; /* Soft blue for dark theme */
-            margin-top: 0;
-            border-bottom: 3px solid #64b5f6;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            font-size: 2em;
-            letter-spacing: 1px;
-        }
+            <!-- Bulk Emails -->
+            <div class="col-md-4">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card alert-danger shadow">
+                        <div class="card-header">
+                        <h4>Bulk Emails</h4>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">Sends bulk emails to users</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-        hr {
-            display: none; /* Hide the default hr tag */
-        }
+        <div class="row pt-5">
+            <!-- Email Tracking -->
+            <div class="col-md-4">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card alert-warning shadow">
+                        <div class="card-header">
+                        <h4>Email Tracking</h4>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">Tracks emails and shows open and click rate</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        <!-- Compress Images -->
+            <div class="col-md-4">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card alert-danger shadow">
+                        <div class="card-header">
+                        <h4>Compress Images</h4>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">Compresses Image files and reduces the size</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        a {
-            display: block;
-            text-decoration: none;
-            color: #121212; /* Dark text on light button */
-            background-color: #64b5f6; /* Accent blue button */
-            padding: 18px 25px;
-            margin: 15px 0;
-            border-radius: 10px;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            font-weight: bold;
-            letter-spacing: 1px;
-            font-size: 1.2em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border: none;
-        }
-
-        a:hover {
-            /* Brighter color on hover */
-            background-color: #90caf9;
-            transform: translateY(-3px); /* More prominent lift effect */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        a:active {
-            background-color: #42a5f5;
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>🤖 Home - Automating Boring Stuff</h2>
-        <a href="{% url 'import_data' %}">📥 Import Data</a>
-        <a href="{% url 'export_data' %}">📤 Export Data</a>
+        <!-- Web Scraping -->
+            <div class="col-md-4">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card alert-warning shadow">
+                        <div class="card-header">
+                        <h4>Web Scraping</h4>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">Scrapes websites for useful information</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+{% endblock %}
