@@ -28,7 +28,9 @@ INSTALLED_APPS = [
     'dataentry',
     'uploads',
     'crispy_forms',
-    'crispy_bootstrap5'
+    'crispy_bootstrap5',
+    'emails',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +143,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 DEFAULT_TO_EMAIL = 'talindaga692@gmail.com'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'height': 200,
+    },
+}
